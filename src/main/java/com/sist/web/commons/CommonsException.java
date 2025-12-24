@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 // 공통으로 사용되는 예외처리
-@RestControllerAdvice
+//@RestControllerAdvice
 public class CommonsException {
 	@ExceptionHandler(Exception.class)
 	public void exception(Exception ex) {

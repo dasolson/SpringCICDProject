@@ -14,4 +14,5 @@ import com.sist.web.vo.SeoulVO;
 public interface SeoulService {
 	public List<SeoulVO> seoulListData(Map map);
 	public int seoulTotalPage(Map map);
+	public SeoulVO seoulDetailData(Map map);
 }
