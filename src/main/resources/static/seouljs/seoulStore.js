@@ -29,7 +29,10 @@ const useSeoulStore = defineStore('seoul',{
 		startPage : 0,
 		endPage : 0,
 		type : 1,
-		detail : {vo:{}} // 실제 상세보기, 주변 맛집
+		detail : {
+			vo:{},
+			list : []
+		} // 실제 상세보기, 주변 맛집
 		// {vo:{}, list:[]} store.detail.vo, store.detail.list
 	}),
 	// 기능 설정 => axios => BASE_URL
