@@ -103,7 +103,7 @@
               <table class="table">
                 <tr>
                   <td>
-                    <table class="table" v-for="rvo in store.reply">
+                    <table class="table" v-for="rvo in store.reply" :key="rvo.no">
                      <tr>
                       <td class="text-left">◑{{rvo.name}} {{rvo.dbday}}</td>
                       <td class="text-right">
