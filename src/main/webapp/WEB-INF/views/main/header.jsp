@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window._LOGIN_={
+		sessionId:'<%=session.getAttribute("id")!=null?session.getAttribute("id"):""%>'
+}
+</script>
 </head>
 <body>
 <!-- Header Section Begin -->
@@ -30,7 +36,12 @@
                             </div>
                             
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                               <c:if test="${sessionScope.id==null }">  
+                                <a href="/member/login"><i class="fa fa-user"></i> Login</a>
+                               </c:if>
+                               <c:if test="${sessionScope.id!=null }">
+                                <a href="/member/logout"><i class="fa fa-user"></i> Logout</a>
+                               </c:if>
                             </div>
                         </div>
                     </div>
@@ -51,19 +62,28 @@
                             <li><a href="#">회원</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">회원가입</a></li>
-                                    <li><a href="./shoping-cart.html">아이디 찾기</a></li>
-                                    <li><a href="./checkout.html">비밀번호 찾기</a></li>                                    
+                                    <li><a href="./shoping-cart.html">아이디찾기</a></li>
+                                    <li><a href="./checkout.html">비밀번호찾기</a></li>
+      
+                                </ul>
+                            </li>
+                            <li><a href="#">맛집</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="/food/list">맛집목록</a></li>
+                                    <li><a href="/food/find">맛집검색</a></li>
+                                    <li><a href="/food/reserve">맛집예약</a></li>
+      
                                 </ul>
                             </li>
                             <li><a href="/seoul">서울여행</a></li>
                             <li><a href="/busan">부산여행</a></li>
                             
-                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="/board/list">커뮤니티</a></li>
                             <li><a href="./contact.html">마이페이지</a></li>
                         </ul>
                     </nav>
                 </div>
-                                
+                
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
